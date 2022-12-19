@@ -126,7 +126,8 @@ p*q    # Retorna la multiplicación elemento a elemento de los vectores
 ## Matrices
 
 ### Declarar matrices
-Existen dos formas para declarar matrices en R, una es por columnas y otra es por filas.  A continuación, se presentan ambos casos:
+Existen dos formas para declarar matrices en R, una es por columnas y otra es por filas.  
+A continuación, se presentan ambos casos:
 
 ```{r}
 # Datos ordenados por columnas
@@ -136,10 +137,15 @@ d1 <- c(1,4,7,2,5,8,3,6,9)
 d2 <- c(1,2,3,4,5,6,7,8,9)
 ```
 
-El vector d1 se utiliza para declarar la matriz por columnas, y el vector d2 para declarar la matriz por filas.  Se utiliza la función matrix() para declarar una matriz, esta función tiene varios parámetros: el primero es data, y hace referencia al vector que contiene los datos de la matriz; el segundo es nrow, e indica el número de filas que contiene la matriz, el tercero es ncol, e indica el número de columnas que contiene la matriz; y el último es byrow e indica si el vector data está ordenado por filas o columnas
+El vector d1 se utiliza para declarar la matriz por columnas, y el vector d2 para declarar la matriz por filas.  
+Se utiliza la función matrix() para declarar una matriz, esta función tiene varios parámetros: el primero es data, 
+y hace referencia al vector que contiene los datos de la matriz; el segundo es nrow, e indica el número de filas 
+que contiene la matriz, el tercero es ncol, e indica el número de columnas que contiene la matriz; y el último es 
+byrow e indica si el vector data está ordenado por filas o columnas
 
 Columnas
-Para declarar una matriz por columnas, se ordena el vector data por columnas y el valor del parámetro byrow debe ser FALSE, para hacer referencia de que el vector data está ordenado por columnas.
+Para declarar una matriz por columnas, se ordena el vector data por columnas y el valor del parámetro byrow debe 
+ser FALSE, para hacer referencia de que el vector data está ordenado por columnas.
 
 ```{r}
 A1 <- matrix(data = d1, nrow = 3, ncol = 3, byrow = FALSE)
@@ -147,7 +153,8 @@ A1
 ```
 
 Filas
-Para declarar una matriz por filas, se ordena el vector data por filas y el valor del parámetro byrow debe ser TRUE, para hacer referencia de que el vector data está ordenado por filas.
+Para declarar una matriz por filas, se ordena el vector data por filas y el valor del parámetro byrow debe ser TRUE, 
+para hacer referencia de que el vector data está ordenado por filas.
 
 ```{r}
 A2 <- matrix(data = d2, nrow = 3, ncol = 3, byrow = TRUE)
@@ -156,7 +163,8 @@ A2
 
 ### Operaciones con matrices
 
-En R se pueden hacer operaciones de summa y resta entre matrices, siempre y cuando las matrices tengan las mismas dimensiones.
+En R se pueden hacer operaciones de summa y resta entre matrices, siempre y cuando las matrices tengan las mismas 
+dimensiones.
 
 ```{r}
 A <- matrix(data = c(1,2,2,4,2,1), nrow = 3, ncol = 2, byrow = FALSE)
@@ -172,7 +180,8 @@ A-B
 ```
 
 
-La multiplicación de una matriz A por una matriz B es posible siempre y cuando el número de columnas de A coincida con el número de filas de B.
+La multiplicación de una matriz A por una matriz B es posible siempre y cuando el número de columnas de A 
+coincida con el número de filas de B.
 
 ```{r}
 # Condideremos las siguientes matrices
@@ -190,7 +199,9 @@ C %*% D
 
 ### Declarar una lista
 
-Las listas en R son estructuras de fdatos que permiten almacenar diferentes tipos de variables.  Para declarar una lista en R, se utiliza la función list(), y entre paréntesis se escriben las variables separadas por coma, como se muestra a continuación:
+Las listas en R son estructuras de fdatos que permiten almacenar diferentes tipos de variables.  
+Para declarar una lista en R, se utiliza la función list(), y entre paréntesis se escriben las 
+variables separadas por coma, como se muestra a continuación:
 
 ```{r}
 nombre.de.lista <- list(a = "Buenos días", b = 42, 
@@ -199,7 +210,8 @@ nombre.de.lista
 ```
 
 
-Para obtener ñps valores de la lista, se escribe el nombre de la lista seguido el símbolo de pesos ($) y luego el nombre de la variable; como se muestra a continuación:
+Para obtener ñps valores de la lista, se escribe el nombre de la lista seguido el símbolo de pesos ($) 
+y luego el nombre de la variable; como se muestra a continuación:
 
 ```{r}
 nombre.de.lista$a   # Se obtiene el valor de a
@@ -212,7 +224,10 @@ nombre.de.lista$d   # Se obtiene el valor de d
 
 ### Declaración de data frame
 
-Los data frame som estructuras de datos de dos dimensiones (rectangulares) que pueden contener datos de diferentes tipos.  Generalmente se utiliza para el análisis de datos y su estructura es familiar a otros paquetes estadísticos. Para declarar un data frame, se utiliza la función data.frame y entre paréntesis se escriben las columnas que contendrá separadas por coma; como se muestra a continuación:
+Los data frame som estructuras de datos de dos dimensiones (rectangulares) que pueden contener datos 
+de diferentes tipos.  Generalmente se utiliza para el análisis de datos y su estructura es familiar 
+a otros paquetes estadísticos. Para declarar un data frame, se utiliza la función data.frame y entre 
+paréntesis se escriben las columnas que contendrá separadas por coma; como se muestra a continuación:
 
 ```{r}
 nombre.de.data.frame <- data.frame(nombre.columna1 = c(1,2,3,4,5),
@@ -222,7 +237,8 @@ nombre.de.data.frame <- data.frame(nombre.columna1 = c(1,2,3,4,5),
 nombre.de.data.frame
 ```
 
-Para obtener los valores de las columnas, se escribe el nombre del data frame seguido el símbolo de pesos ($) y luego el nombre de la columna
+Para obtener los valores de las columnas, se escribe el nombre del data frame seguido el símbolo de 
+pesos ($) y luego el nombre de la columna
 
 ```{r}
 nombre.de.data.frame$nombre.columna1   # Se obtiene el valor de nombre.columna1
@@ -242,19 +258,23 @@ nombre.de.data.frame <- data.frame(nombre.columna1 = c(1,2,3,4,5),
 nombre.de.data.frame
 ```
 
-Para buscar observaciones específicas en R, se utilizan los operdores comparativos. Por ejemplo, para buscar aquellas observaciones en las cuales la variable nombre.columna1 sea mayor que 3, se utiliza el siguiente código:
+Para buscar observaciones específicas en R, se utilizan los operdores comparativos. Por ejemplo, 
+para buscar aquellas observaciones en las cuales la variable nombre.columna1 sea mayor que 3, 
+se utiliza el siguiente código:
 
 ```{r}
 # Se obtienen los datos u observaciones en los que nombre.columna1 sean mayores que 3
 nombre.de.data.frame[nombre.de.data.frame$nombre.columna1 > 3, ]
 ```
-Para buscar aquellas observaciones en las cuales la variable nombre.columna2 sea igual a "Juanma", se utiliza el siguiente código:
+Para buscar aquellas observaciones en las cuales la variable nombre.columna2 sea igual a "Juanma", 
+se utiliza el siguiente código:
 
 ```{r}
 # Se obtienen las obswrvaciones cuyo valor de nombre.columna2 sea igual a Juanma
 nombre.de.data.frame[nombre.de.data.frame$nombre.columna2 == "Juanma", ]
 ```
-Para buscar aquellas observaciones en las cuales la variable nombre.columna3 sea igual a TRUE, se utiliza el siguiente código:
+Para buscar aquellas observaciones en las cuales la variable nombre.columna3 sea igual a TRUE, 
+se utiliza el siguiente código:
 
 ```{r}
 # Se obtienen las observaciones o datos cuya variable nombre.columna3 sea igual a TRUE
@@ -265,7 +285,8 @@ nombre.de.data.frame[nombre.de.data.frame$nombre.columna3 == TRUE, ]
 
 ### Declarar una función
 
-En R se declaran las funciones con la palabra function(), por ejemplo, la siguiente función imprime la palabra "POLLO" en la consola
+En R se declaran las funciones con la palabra function(), por ejemplo, la siguiente función 
+imprime la palabra "POLLO" en la consola
 
 ```{r}
 nombre_de_funcion <- function(){
@@ -279,7 +300,8 @@ nombre_de_funcion()   # Se ejecuta la función declarada
 
 ### Función plot()
 
-En R la función plot() se usa de manera general para crear gráficos.  Para ello, es necesario definir los siguientes argumentos:
+En R la función plot() se usa de manera general para crear gráficos.  Para ello, es necesario 
+definir los siguientes argumentos:
 
 ```{r}
 # Representará el eje x del plano cartesiano
@@ -305,15 +327,20 @@ plot(x, y, type = "s")   # Tipo s
 
 ### Agregar texto a la gráfica
 
-Para agregar texto a la gráfica, se utiliza los parámetros "main" para el título del gráfico, "sub" para el subtítulo del gráfico, "xlab" nombre del eje x y "ylab" nombre del eje y.  El código para visualizar un gráfico con texto es el siguiente:
+Para agregar texto a la gráfica, se utiliza los parámetros "main" para el título del gráfico, 
+"sub" para el subtítulo del gráfico, "xlab" nombre del eje x y "ylab" nombre del eje y.  
+El código para visualizar un gráfico con texto es el siguiente:
 
 ```{r}
-plot(x, y, type = "l", main = "Título del gráfico", sub = "Subtítulo del gráfico", xlab = "Etiqueta del eje X", ylab = "Etiqueta del eje Y")
+plot(x, y, type = "l", main = "Título del gráfico", sub = "Subtítulo del gráfico", 
+xlab = "Etiqueta del eje X", ylab = "Etiqueta del eje Y")
 ```
 
 ### Función barplot()
 
-La función barplot(), se utiliza para realizar gráficos de barra.  Esta gráfica nos muestra la frecuencia con la que se han observado los datos de una variable discreta.  Suponga que se tienen 11 personas del género femenino y 21 personas del género masculino.
+La función barplot(), se utiliza para realizar gráficos de barra.  Esta gráfica nos muestra 
+la frecuencia con la que se han observado los datos de una variable discreta.  Suponga que 
+se tienen 11 personas del género femenino y 21 personas del género masculino.
 
 Para realizar el gráfico de barras se escribe el siguiente código:
 
@@ -323,16 +350,22 @@ barplot(c(11, 21), names.arg = c("Femenino", "Masculino"))
 
 ### Agregar texto a la gráfica
 
-Para agregar texto a la gráfica, se utiliza los parámetros "main" para el título del gráfico, "sub" para el subtítulo del gráfico, "xlab" nombre del eje x y "ylab" nombre del eje y. En el siguiente código se visualiza un gráfico con texto:
+Para agregar texto a la gráfica, se utiliza los parámetros "main" para el título del gráfico, 
+"sub" para el subtítulo del gráfico, "xlab" nombre del eje x y "ylab" nombre del eje y. 
+En el siguiente código se visualiza un gráfico con texto:
 
 ```{r}
-barplot(c(11, 21), names.arg = c("Femenino", "Masculino"), main = "Título del gráfico", sub = "Subtítulo del gráfico", xlab = "Etiqueta del eje x", ylab = "Etiqueta del eje y", col = c("pink", "blue"))
+barplot(c(11, 21), names.arg = c("Femenino", "Masculino"), main = "Título del gráfico", 
+sub = "Subtítulo del gráfico", xlab = "Etiqueta del eje x", ylab = "Etiqueta del eje y", 
+col = c("pink", "blue"))
 ```
 
 
 ### Función hist()
 
-La función hist(), se utiliza para realizar un histograma.  Esta gráfica nos muestra la distribución de los datos usando barras.  Suponga que se tiene la información de la edad de 30 niños y se desea conocer su distribución, para ello se utiliza el siguiente código:
+La función hist(), se utiliza para realizar un histograma.  Esta gráfica nos muestra la 
+distribución de los datos usando barras.  Suponga que se tiene la información de la edad 
+de 30 niños y se desea conocer su distribución, para ello se utiliza el siguiente código:
 
 ```{r}
 edad <- c(2,4,5,3,4,5,6,7,5,6,5,4,6,8,2,10,4,6,7,8,4,8,8,7,4,6,8,7,8,4)
@@ -343,45 +376,12 @@ hist(edad)  # Genera un histograma para el vector "edad"
 
 ### Agregar texto al histograma
 
-Para agregar texto al histograma, se utiliza los parámetros "main" para el título del gráfico, "sub" para el subtítulo del gráfico, "xlab" nombre del eje x y "ylab" nombre del eje y. En el siguiente código se visualiza un histograma con texto:
+Para agregar texto al histograma, se utiliza los parámetros "main" para el título del gráfico, 
+"sub" para el subtítulo del gráfico, "xlab" nombre del eje x y "ylab" nombre del eje y. 
+En el siguiente código se visualiza un histograma con texto:
 
 ```{r}
 hist(edad, main = "Título del gráfico", sub = "Subtítulo del gráfico", 
      xlab = "Etiqueta del eje x", ylab = "Etiqueta del eje y", 
      col = palette("Pastel 2"))
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
