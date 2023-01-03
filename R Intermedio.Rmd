@@ -1460,7 +1460,7 @@ Podemos especificar que los delimitadores en general, se adapten a la altura de 
 
 **Ejemplo 1 al no usarlos:** `$(\dfrac{a}{b})$`  $(\dfrac{a}{b})$
 
-**Ejemplo 1 al usarlos:** `$\left(\dfrac{a}{b}\right.)$`  $\left(\dfrac{a}{b}\right.)$
+**Ejemplo 1 al usarlos:** `$\left(\dfrac{a}{b}\right)$`  $\left(\dfrac{a}{b}\right)$
 
 **Ejemplo 2 al no usarlos:** `$$\int_{0}^1 x\ dx = \frac{x^2}{2}]_{0}^{1} = \frac{1}{2}$$`   $$\int_{0}^1 x\ dx = \frac{x^2}{2}]_{0}^{1} = \frac{1}{2}$$
 
