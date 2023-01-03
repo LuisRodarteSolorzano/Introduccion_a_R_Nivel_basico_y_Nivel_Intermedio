@@ -1,47 +1,54 @@
 ---
 title: "Curso de R Nivel Básico"
+header-includes:
+   - \usepackage{amsmath}
+   - \usepackage[T1]{fontenc}
+   - \usepackage{caption,setspace}
+   - \usepackage{multicol}
+   - \captionsetup[figure]{name=Figura}
+   - \captionsetup[table]{name=Tabla}
+   - \usepackage{xcolor}
 author: "Luis Manuel Rodarte Solórzano"
-date: "2022-04-11"
+date: '`r format(Sys.Date(), "%B %d, %Y")`'
 output:
-  html_document: default
-  pdf_document: default
   word_document: default
-editor_options:
-  chunk_output_type: inline
+  pdf_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+
+
+
 # 1. Introducción a R
 
-### 1. Aritmética Básica
+## 1.1. Aritmética Básica
 
-En el lenguaje R, las cuatro operaciones básicas de la aritmética se representan con los símbolos + (suma), − (resta), ∗ (multiplicación) y / (división). Por ejemplo, para realizar la suma de uno más dos en R, basta con escribir en la consola 1+2, luego dar clic en la tecla Enter. El siguiente ejemplo, ilustra la suma de uno más dos en R.
+En el lenguaje R, las cuatro operaciones básicas de la aritmética se representan con los símbolos + (suma), - (resta), ∗ (multiplicación) y / (división). Por ejemplo, para realizar la suma de uno más dos en R, basta con escribir en la consola `1+2`, luego dar clic en la tecla Enter. El siguiente ejemplo, ilustra la suma de uno más dos en R.
 
 ```{r echo=TRUE}
-### Aritmética Básica ###
-
 # Suma
 1+2
 ```
 
-Al realizar la resta de seis menos dos en la consola de R, se debe de escribir 6−2, tal como se muestra en el siguiente código:
+Al realizar la resta de seis menos dos en la consola de R, se debe de escribir `6−2`, tal como se muestra en el siguiente código:
 
 ```{r}
 # Resta
 6-2
 ```
 
-Para realizar la multiplicación de seis por dos, se debe de escribir 5∗7, tal como se muestra a continuación:
+Para realizar la multiplicación de seis por dos, se debe de escribir `5∗7`, tal como se muestra a continuación:
 
 ```{r}
 # Multiplicación
 5*7
 ```
 
-Al realizar la división de seis entre dos en la consola de R, se debe de escribir 50/15, de manera que el resultado es el siguiente:
+Al realizar la división de seis entre dos en la consola de R, se debe de escribir `50/15`, de manera que el resultado es el siguiente:
 
 ```{r}
 # División
@@ -64,11 +71,11 @@ sqrt(((2*3+21)/(55-34))^3)
 ```
 
 
-### 2. Operadores comparativos
+## 1.2. Operadores comparativos
 
-#### Símbolos < y >
+### 1.2.1. Símbolos <  y  >
 
-En R se utilizan los símbolos menor que (<) y mayor que (>) para comparar dos cantidades. Por ejemplo, si ingresamos en R `3/14 < 6/25`, retorna TRUE si efectivamente 1/6<2/9 y en caso de que 1/6 sea mayor que 2/9 retorna FALSE.
+En R se utilizan los símbolos menor que (<) y mayor que (>) para comparar dos cantidades. Por ejemplo, si ingresamos en R `3/14 < 6/25`, retorna TRUE si efectivamente 1/6 < 2/9 y en caso de que 1/6 sea mayor que 2/9 retorna FALSE.
 
 ```{r}
 ## Operadores comparativos
@@ -82,39 +89,40 @@ Al realizar la siguiente operación `1/6 > 2/9` en R, el resultado es FALSE. Rea
 ```
 
 
-#### Otros símbolos
+### 1.2.2. Otros símbolos
 
 En la siguiente tabla, se presentan otros operadores comparativos que se utilizan en R.
 
 
 
- **Símbolo** |  **Comando de R**  |  **Ejemplo** |
- ------------|--------------------|--------------|
-  ≤          |   `<=`             |   `1<=3`     |
-  ≥          |   `>=`             |   `15>=3`    |
-  =          |   `==`             |   `6==3`     |
-  ≠          |   `!=`             |   `1!=7`     |
+ **Símbolo** |  **Comando de R**  |  **Ejemplo** 
+ ------------|--------------------|--------------
+  ≤          |   `<=`             |   `1<=3`     
+  ≥          |   `>=`             |   `15>=3`    
+  =          |   `==`             |   `6==3`     
+  ≠          |   `!=`             |   `1!=7`     
 
 
-### 3. Tipos de Datos
+## 1.3. Tipos de Datos
 
-#### Logical
+### 1.3.1. Logical
+
 En R existen tres tipos de datos básicos, los cuales son: logical, numeric y character. Los de tipo **logical** son únicamente TRUE y FALSE. Los **numeric** son los números reales, por ejemplo, 1.2, 100, 0.00002,..., etc. Los de tipo **character** son las cadenas de texto declaradas entre comillas dobles o simples, por ejemplo, `"Hola Mundo"` o `'Hola Mundo'`.
 
 
-### 4. Operadores Lógicos
+## 1.4. Operadores Lógicos
 
 Los operadores lógicos en R se utilizan para representar operaciones de algebra Booleana, es decir, para describir relaciones lógicas expresadas en términos de `FALSE` o `TRUE`. En la siguiente tabla se muestran las diferentes operaciones Booleanas.
 
-| **Operador** |  **Comparación**             |  **Ejemplo**    | **Resultado** |
-| -------------|----------------------------- |-----------------|---------------|
-|  `!x`        |x no es verdadero (Negación)  |  `!FALSE`       |  `TRUE`       |
-|  `isTRUE `   |x es verdadero (Afirmación)   |  `isTRUE(TRUE)` |  `TRUE`       |
-|  `x|y`       |x ó y es verdadero            |  `FALSE | TRUE` |  `TRUE`       |
-|  `x & y`     |x y y son verdaderos          |  `TRUE & FALSE` |  `FALSE`      |
+ **Operador** |  **Comparación**             |  **Ejemplo**    | **Resultado** 
+ -------------|----------------------------- |-----------------|---------------
+  `!x`        |x no es verdadero (Negación)  |  `!FALSE`       |  `TRUE`       
+  `isTRUE `   |x es verdadero (Afirmación)   |  `isTRUE(TRUE)` |  `TRUE`       
+  `x|y`       |x ó y es verdadero            |  `FALSE | TRUE` |  `TRUE`       
+  `x & y`     |x y y son verdaderos          |  `TRUE & FALSE` |  `FALSE`      
 
 
-Las leyes de asignación de los operadores | y & son las siguientes:
+Las leyes de asignación de los operadores $|$ y $&$ son las siguientes:
 
 - `&` retorna `TRUE` si y solo si ambos datos son `TRUE`
 - `&` retorna `FALSE` si alguno de los datos es `FALSE`
@@ -123,9 +131,9 @@ Las leyes de asignación de los operadores | y & son las siguientes:
 
 
 
-### 5. Declaración de variables
+## 1.5. Declaración de variables
 
-En R existen tres formas de declarar variables y para el nombre de las variables se pueden utilizar las letras mayúsculas de la A-Z, las minúsculas de la a-z y los números del 0-9, teniendo en cuenta que el nombre de una variable nunca debe de iniciar con un número. A continuación, se presentan las tres forma de declarar variables en R.
+En R existen tres formas de declarar variables y para el nombre de las variables se pueden utilizar las letras mayúsculas de la "A" a la "Z", las minúsculas de la "a" a la "z" y los números del 0 al 9, teniendo en cuenta que el nombre de una variable nunca debe de iniciar con un número. A continuación, se presentan las tres forma de declarar variables en R.
 
 ```{r}
 # Tipo 1
@@ -145,7 +153,8 @@ Para conocer qué tipo de dato es una variable, se utiliza la función `class()`
 z = 5
 class(z)   # imprime a que clase (tipo) pertenece z
 
-z1 <- "Su mamá se lo decía: -Pos que tienes muchacho, cuídate de las malas compañías ese pelado con quien andas. Ceja poblada, Bigote caído, patilla larga, no le hagas confianza es mañoso"
+z1 <- "Todos tenemos un secreto escondido bajo llave en el ático del alma."
+
 class(z1)
 is.logical(z1)   # ¿z1 es de tipo logical?
 is.character(z1)  # ¿z1 es de tipo character?
@@ -164,34 +173,36 @@ is.numeric(z4)    # ¿z3 es de tipo numeric?
 
 # 2. Tipos de Objetos en R
 
-### 1. Vectores
+## 2.1. Vectores
 
 Para declarar un vector en R, se utiliza la palabra reservada `c` y seguido de la letra “c” en paréntesis se escriben los elementos del vector separados por coma. Por ejemplo:
 
 ```{r}
 # Declarar un vector
-v <- c(0,1,1,2,3,5,8,13,21,34)   # Forma para declarar un vector c(elemento1, elemento 2,...)
+v <- c(0,1,1,2,3,5,8,13,21,34) 
+# Forma para declarar un vector c(elemento1, elemento 2,...)
+
 v # Vector v
 ```
 
 Para calcular la media aritmética de un vector que contiene datos de tipo numeric, se utiliza la función `mean()`, entre los paréntesis se ubica el vector, por ejemplo:
 
 ```{r}
-# Función mean
-mean(v)   # Retorna la media aritmética de los datos {0,1,1,2,3,5,8,13,21,34}
+# Función mean()
+mean(v)  # Retorna la media aritmética de los datos {0,1,1,2,3,5,8,13,21,34}
 ```
 
 Para calcular la suma de los elementos de un vector que contiene datos de tipo numeric, se utiliza la función `sum()`, por ejemplo:
 
 ```{r}
-# Función sum
-sum(v)     # Retorna la suma de los datos {0,1,1,2,3,5,8,13,21,34}
+# Función sum()
+sum(v)   # Retorna la suma de los datos {0,1,1,2,3,5,8,13,21,34}
 ```
 
 Para calcular la desviación estándar de los elementos de un vector que contiene datos de tipo numeric, se utiliza la función `sd()`, por ejemplo:
 
 ```{r}
-# Función sd
+# Función sd()
 sd(v)      # Retorna la desviación estándar de los elementos del vector v
 ```
 
@@ -215,9 +226,9 @@ p*q    # Retorna la multiplicación elemento a elemento de los vectores
 ```
 
 
-### 2. Matrices
+## 2.2. Matrices
 
-#### Declarar matrices
+### 2.2.1. Declarar matrices
 
 Existen dos formas para declarar matrices en R, una es por columnas y otra es por filas.  A continuación, se presentan ambos casos; considere la matriz $A=\begin{equation}
 \begin{bmatrix}
@@ -237,7 +248,8 @@ d2 <- c(1,1,2,3,5,8,13,21,34)
 
 El vector `d1` se utiliza para declarar la matriz por columnas, y el vector `d2` para declarar la matriz por filas.  Se utiliza la función `matrix()` para declarar una matriz, esta función tiene varios parámetros: el primero es `data`, y hace referencia al vector que contiene los datos de la matriz; el segundo es `nrow`, e indica el número de filas que contiene la matriz, el tercero es `ncol`, e indica el número de columnas que contiene la matriz; y el último es `byrow` e indica si el vector `data` está ordenado por filas o columnas
 
-##### Columnas
+#### Por Columnas
+***
 Para declarar una matriz por columnas, se ordena el vector `data` por columnas y el valor del parámetro `byrow` debe ser `FALSE`, para hacer referencia de que el vector `data` está ordenado por columnas.
 
 ```{r}
@@ -245,7 +257,8 @@ A1 <- matrix(data = d1, nrow = 3, ncol = 3, byrow = FALSE)
 A1
 ```
 
-##### Filas
+#### Por Filas
+***
 Para declarar una matriz por filas, se ordena el vector `data` por filas y el valor del parámetro `byrow` debe ser `TRUE`, para hacer referencia de que el vector `data` está ordenado por filas.
 
 ```{r}
@@ -253,7 +266,7 @@ A2 <- matrix(data = d2, nrow = 3, ncol = 3, byrow = TRUE)
 A2
 ```
 
-#### Operaciones con matrices
+### 2.2.2. Operaciones con matrices
 
 En R se pueden hacer operaciones de summa y resta entre matrices, siempre y cuando las matrices tengan las mismas dimensiones.
 
@@ -307,84 +320,86 @@ Dado que el número de columnas de *C* es igual al número de filas de *D*, ento
 C %*% D
 ```
 
-Note que para multiplicar dos matrices, se utiliza el operador %*%.
+Note que para multiplicar dos matrices, se utiliza el operador` %*%`.
 
 
-### 3. Listas
+## 2.3. Listas
 
-#### Declarar una lista
+### 2.3.1. Declarar una lista
 
 Las listas en R son estructuras de fdatos que permiten almacenar diferentes tipos de variables.  Para declarar una lista en R, se utiliza la función `list()`, y entre paréntesis se escriben las variables separadas por coma, como se muestra a continuación:
 
 ```{r}
-nombre.de.lista <- list(a = "Buongiorno principessa", b = 42, 
+nombre_de_lista <- list(a = "Buongiorno principessa", b = 42, 
                         c = TRUE, d = c(1,2,3,4,5))
-nombre.de.lista
+nombre_de_lista
 ```
 
 
 Para obtener ñps valores de la lista, se escribe el nombre de la lista seguido el símbolo de pesos ($) y luego el nombre de la variable; como se muestra a continuación:
 
 ```{r}
-nombre.de.lista$a   # Se obtiene el valor de a
-nombre.de.lista$b   # Se obtiene el valor de b
-nombre.de.lista$c   # Se obtiene el valor de c
-nombre.de.lista$d   # Se obtiene el valor de d
+nombre_de_lista$a   # Se obtiene el valor de a
+nombre_de_lista$b   # Se obtiene el valor de b
+nombre_de_lista$c   # Se obtiene el valor de c
+nombre_de_lista$d   # Se obtiene el valor de d
 ```
 
-### 4. Data frame
+## 2.4. Data frame
 
-#### Declaración de data frame
+### 2.4.1. Declaración de data frame
 
 Los data frame som estructuras de datos de dos dimensiones (rectangulares) que pueden contener datos de diferentes tipos.  Generalmente se utiliza para el análisis de datos y su estructura es familiar a otros paquetes estadísticos. Para declarar un data frame, se utiliza la función `data.frame` y entre paréntesis se escriben las columnas que contendrá separadas por coma; como se muestra a continuación:
 
 ```{r}
-nombre.de.data.frame <- data.frame(nombre.columna1 = c(1,2,3,4,5),
-                                   nombre.columna2 = c("Juanma","Braulio", "Luis", "Alejandro", "Pedro"),
-                                   nombre.columna3 = c(FALSE,TRUE,FALSE,TRUE,FALSE))
+nombre_de_data_frame <- data.frame(nombre_columna1 = c(1,2,3,4,5),
+                                   nombre_columna2 = 
+                                     c("Juanma","Braulio","Luis","Alejandro","Pedro"),
+                                   nombre_columna3 = c(FALSE,TRUE,FALSE,TRUE,FALSE))
 
-nombre.de.data.frame
+nombre_de_data_frame
 ```
 
 Para obtener los valores de las columnas, se escribe el nombre del data frame seguido el símbolo de pesos `$` y luego el nombre de la columna.
 
 ```{r}
-nombre.de.data.frame$nombre.columna1   # Se obtiene el valor de nombre.columna1
-nombre.de.data.frame$nombre.columna2   # Se obtiene el valor de nombre.columna2
-nombre.de.data.frame$nombre.columna3   # Se obtiene el valor de nombre.columna3
+nombre_de_data_frame$nombre_columna1  # Se obtiene el valor de nombre_columna1
+nombre_de_data_frame$nombre_columna2  # Se obtiene el valor de nombre_columna2
+nombre_de_data_frame$nombre_columna3  # Se obtiene el valor de nombre_columna3
 ```
 
-#### Selección de datos usando operadores comparativos
+### 2.4.2. Selección de datos usando operadores comparativos
 
 Sea el siguiente data frame
 
 ```{r}
-nombre.de.data.frame <- data.frame(nombre.columna1 = c(1,2,3,4,5),
-                                   nombre.columna2 = c("Juanma","Braulio","Luis", "Alejandro","Pedro"),
-                                   nombre.columna3 = c(FALSE,TRUE,FALSE,TRUE, FALSE))
+nombre_de_data_frame <- data.frame(nombre_columna1 = c(1,2,3,4,5),
+                                   nombre_columna2 = c("Juanma","Braulio","Luis",
+                                                       "Alejandro","Pedro"),
+                                   nombre_columna3 = c(FALSE,TRUE,FALSE,TRUE,FALSE))
 
-nombre.de.data.frame
+nombre_de_data_frame
 ```
 
 Para buscar observaciones específicas en R, se utilizan los operdores comparativos. Por ejemplo, para buscar aquellas observaciones en las cuales la variable `nombre.columna1` sea mayor que 3, se utiliza el siguiente código:
 
 ```{r}
 # Se obtienen los datos u observaciones en los que nombre.columna1 sean mayores que 3
-nombre.de.data.frame[nombre.de.data.frame$nombre.columna1 > 3, ]
+nombre_de_data_frame[nombre_de_data_frame$nombre_columna1 > 3, ]
 ```
 
 Para buscar aquellas observaciones en las cuales la variable `nombre.columna2` sea igual a "Juanma", se utiliza el siguiente código:
 
 ```{r}
 # Se obtienen las obswrvaciones cuyo valor de nombre.columna2 sea igual a Juanma
-nombre.de.data.frame[nombre.de.data.frame$nombre.columna2 == "Juanma", ]
+nombre_de_data_frame[nombre_de_data_frame$nombre_columna2 == "Juanma", ]
 ```
 
 Para buscar aquellas observaciones en las cuales la variable `nombre.columna3` sea igual a `TRUE`, se utiliza el siguiente código:
 
 ```{r}
 # Se obtienen las observaciones o datos cuya variable nombre.columna3 sea igual a TRUE
-nombre.de.data.frame[nombre.de.data.frame$nombre.columna3 == TRUE, ]
+nombre_de_data_frame[nombre_de_data_frame$nombre_columna3 == TRUE, ]
 ```
 
 ***
@@ -392,9 +407,9 @@ nombre.de.data.frame[nombre.de.data.frame$nombre.columna3 == TRUE, ]
 
 # 3. Funciones
 
-### 1. Mi primera función
+## 3.1. Mi primera función
 
-#### Declarar una función
+### 3.1.1. Declarar una función
 
 En R se declaran las funciones con la palabra `function()`, por ejemplo, la siguiente función imprime la palabra "POLLO" en la consola.
 
@@ -411,9 +426,10 @@ nombre_de_funcion()   # Se ejecuta la función declarada
 
 # 4. Gráficos
 
-### 1. Función `plot()`
+## 4.1. Función `plot()`
 
-#### Declarar ejes x y y
+### 4.1.1. Declarar ejes x y y
+
 En R la función `plot()` se usa de manera general para crear gráficos.  Para ello, es necesario definir los siguientes argumentos:
 
 ```{r}
@@ -426,7 +442,7 @@ y <- c(1,4,9,16,25,36,49,64,81,100)
 plot(x, y)
 ```
 
-#### Tipo de gráfico
+### 4.1.2. Tipo de gráfico
 
 Se pueden escoger diferentes tipos de gráficos utilizando las siguientes sintaxis:
 
@@ -438,23 +454,25 @@ plot(x, y, type = "s")   # Tipo s
 plot(x, y, type = "S")   # Tipo S
 ```
 
-#### Agregar texto a la gráfica
+### 4.1.3. Agregar texto a la gráfica
 
 Para agregar texto a la gráfica, se utiliza los parámetros "main" para el título del gráfico, "sub" para el subtítulo del gráfico, "xlab" nombre del eje x y "ylab" nombre del eje y.  El código para visualizar un gráfico con texto es el siguiente:
 
 ```{r}
-plot(x, y, type = "l", main = "Título del gráfico", sub = "Subtítulo del gráfico", xlab = "Etiqueta del eje X", ylab = "Etiqueta del eje Y")
+plot(x, y, type = "l", main = "Título del gráfico", 
+     sub = "Subtítulo del gráfico", xlab = "Etiqueta del eje X", 
+     ylab = "Etiqueta del eje Y")
 ```
 
-### 2. Función `barplot()`
+## 4.2. Función `barplot()`
 
 La función `barplot()`, se utiliza para realizar gráficos de barra.  Esta gráfica nos muestra la frecuencia con la que se han observado los datos de una variable discreta.  Suponga que se tienen 34 acciones de Microsoft y 21 acciones de Apple.
 
 
- **Empresa o Compañía** |  **Títulos o acciones**  |  
- ------------|------------------|
-  MICROSOFT  |   34             |   
-  APPLE      |   21             |   
+ **Empresa o Compañía** |  **Títulos o acciones**    
+ ------------|------------------
+  MICROSOFT  |   34                
+  APPLE      |   21                
 
 
 
@@ -466,59 +484,73 @@ barplot(c(34, 21), names.arg = c("Microsoft", "Apple"))
 ```
 
 
-#### Agregar texto a la gráfica
+### 4.2.1. Agregar texto a la gráfica
 
 Para agregar texto a la gráfica, se utiliza los parámetros "main" para el título del gráfico, "sub" para el subtítulo del gráfico, "xlab" nombre del eje x y "ylab" nombre del eje y. En el siguiente código se visualiza un gráfico con texto:
 
 ```{r}
-barplot(c(34, 21), names.arg = c("Microsoft", "Apple"), main = "Título del gráfico", sub = "Subtítulo del gráfico", xlab = "Etiqueta del eje x", ylab = "Etiqueta del eje y", col = c("blue", "purple"))
+barplot(c(34, 21), names.arg = c("Microsoft", "Apple"), 
+        main = "Título del gráfico", sub = "Subtítulo del gráfico", 
+        xlab = "Etiqueta del eje x", ylab = "Etiqueta del eje y", 
+        col = c("blue", "purple"))
 ```
 
 
 
-### 3. Función `hist()`
+## 4.3. Función `hist()`
 
 La función `hist()`, se utiliza para realizar un histograma.  Esta gráfica nos muestra la distribución de los datos usando barras.  Suponga que se tiene la información de la edad de 30 niños y se desea conocer su distribución, para ello se utiliza el siguiente código:
 
 
 ```{r}
-precio_dolar_nov_dic <- c(19.643, 19.743, 19.792, 19.77, 19.748, 19.604, 19.51,
-                  19.844, 19.763, 19.6126, 19.657, 19.746, 19.726, 
-                  19.374, 19.123, 19.251, 19.216, 19.295, 19.33,  
-                  19.367, 19.354, 19.419, 19.538, 19.435, 19.407,
-                  19.338, 19.354, 19.339, 19.495, 19.31, 19.567,  
-                  19.513, 19.441, 19.501, 19.635, 19.65, 19.74)
+precio_dolar_nov_dic <- c(19.643, 19.743, 19.792, 19.77, 19.748, 
+                          19.604, 19.51, 19.844, 19.763, 19.6126, 
+                          19.657, 19.746, 19.726, 19.374, 19.123, 
+                          19.251, 19.216, 19.295, 19.33, 19.367, 
+                          19.354, 19.419, 19.538, 19.435, 19.407,
+                          19.338, 19.354, 19.339, 19.495, 19.31, 
+                          19.567, 19.513, 19.441, 19.501, 19.635, 
+                          19.65, 19.74)
 hist(precio_dolar_nov_dic)
 ```
 
 
-#### Agregar texto al histograma
+### 4.3.1. Agregar texto al histograma
 
 Para agregar texto al histograma, se utiliza los parámetros "main" para el título del gráfico, "sub" para el subtítulo del gráfico, "xlab" nombre del eje x y "ylab" nombre del eje y. En el siguiente código se visualiza un histograma con texto:
 
 ```{r}
-hist(precio_dolar_nov_dic, main = "Título del gráfico", sub = "Subtítulo del gráfico", 
+hist(precio_dolar_nov_dic, main = "Título del gráfico", 
+     sub = "Subtítulo del gráfico", 
      xlab = "Etiqueta del eje x", ylab = "Etiqueta del eje y", 
      col = palette("Pastel 2"))
 ```
 
 
-### 4. Función `pie()`
+## 4.4. Función `pie()`
 
 La función `pie()`, se utiliza para realizar diagramas de pastel. El primer argumento de esta función, son lo valores que demarcarán las divisiones del círculo que representa el 100% del área. Luego se indican los valores que determinarán la construcción de etiquetas. En el siguiente ejemplo se muestra un diagrama de pastel:
 
 
 ```{r}
-porcentajes <- c(0.15,0.2,0.2,0.3,0.15) # Porcentajes asociados a cada instrumento de inversión
-etiqueta_porcentajes <- c("Acciones","ETF's","FIBRAS","CETES","Bonos gubernamentales")
+# Porcentajes asociados a cada instrumento de inversión
+porcentajes <- c(0.15,0.2,0.2,0.3,0.15) 
+etiqueta_porcentajes <- c("Acciones","ETFs","FIBRAS","CETES","Bonos gubernamentales")
 
 pie(porcentajes, labels = etiqueta_porcentajes)
 ```
 
-#### Agregar texto a la gráfica
+### 4.4.1. Agregar texto a la gráfica
+
 Para agregar texto a la gráfica, se utiliza los parámetros “main” para título del gráfico, “sub” para subtítulo del gráfico, “xlab” nombre del eje x y “ylab” nombre del eje y. En el siguiente código se visualiza un gráfico con texto.
 
 ```{r}
-pie(porcentajes, labels = etiqueta_porcentajes,main = "Título del gráfico", sub = "Subtítulo del gráfico",xlab = "Etiqueta del eje X",ylab = "Etiqueta del eje Y", col = rainbow(6))
+pie(porcentajes, labels = etiqueta_porcentajes,
+    main = "Título del gráfico", 
+    sub = "Subtítulo del gráfico", xlab = "Etiqueta del eje X",
+    ylab = "Etiqueta del eje Y", col = rainbow(6))
 ```
+
+
+
 
