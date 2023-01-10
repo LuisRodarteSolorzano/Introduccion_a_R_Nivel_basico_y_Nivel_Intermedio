@@ -1448,7 +1448,7 @@ Más menos | `$\pm$` | $\pm$
 Sumatorio | `$\sum_{i=0}^{n}$` | $\sum_{i=0}^{n}$
 Integral | `$\int_{a}^{b}$` | $\int_{a}^{b}$
 Negrita | `$\mathbf{x}$` | $\mathbf{x}$
-Color azul | `$\color{blue}{\text{x}$` | $\color{blue}{\text{x}}$
+Color azul | `$\color{blue}{\text{x}}$` | $\color{blue}{\text{x}}$
 Espacio entre símbolos | `$x\ y$` | 	$x\ y$
 Texto | `$\text{Texto}$` | $\text{Texto}$
 Fracción pequeña | `$\frac{x}{y}$` | 	$\frac{x}{y}$
