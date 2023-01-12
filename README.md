@@ -75,6 +75,7 @@ El presente Curso de R Nivel Intermedio está conformado por ocho unidades. En l
 ### TEMAS Y SUBTEMAS
 
 1. **Objetos en R**
+
         1. Vectores
               1. Operación potencia.
               2. Función seq()
@@ -94,11 +95,13 @@ El presente Curso de R Nivel Intermedio está conformado por ocho unidades. En l
              11. Función cbind()
 
 2. **Importar datos a R**
+
         1. Importar archivos .txt
         2. Importar archivos .csv
         3. Importar archivos excel
 
 3. **Data frame**
+
         1. Selección de datos usando operadores comparativos
         2. Selección de datos usando operadores lógicos & y |
         3. Agregar o quitar columnas
@@ -106,11 +109,13 @@ El presente Curso de R Nivel Intermedio está conformado por ocho unidades. En l
         5. Función summary.data.frame()
 
 4. **Listas en R**
+
         1. Declacación de lista
         2. Selección de elementos de una lista
         3. Agregar o quitar elementos de una lista
 
 5. **Programación en R**
+
         1. Condicional if
         2. Condicional if-else
         3. Condicional ifelse()
@@ -118,15 +123,18 @@ El presente Curso de R Nivel Intermedio está conformado por ocho unidades. En l
         5. Bucle for
 
 6. **Funciones**
+
         1. Mi primera función
         2. Funciones con ausencia de parámetros
         3. Funciones con ausencia de retorno
         4. Funciones con parámetros por default
 
 7. **Gráficos en R**
+
         1. Funciones plot(), barplot(), hist(), boxplot() y pie().
         2. Función curve()
         3. Gráfico con ggplot2 usando geom_point()
 
 8. **R Markdown**
+
         1. Crear un archivo R Markdown
